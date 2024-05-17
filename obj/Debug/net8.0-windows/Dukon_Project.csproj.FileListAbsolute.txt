@@ -29,3 +29,4 @@ C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.AddPerson
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.Properties.Resources.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.UpdateProduct.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormDelete.resources
+C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.sourcelink.json
