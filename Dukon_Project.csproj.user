@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AddPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormLastPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormMeneger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormSealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormTushum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormUpdateParol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Seale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\UpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
