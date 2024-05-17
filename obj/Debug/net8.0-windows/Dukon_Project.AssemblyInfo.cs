@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dukon_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92b69ea0f1afa49d33005e735ba710964a00955f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65608d63709a7d27c7088ab58c72e180d3542941")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dukon_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dukon_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

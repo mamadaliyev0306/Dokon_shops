@@ -329,21 +329,21 @@ namespace Dukon_Project
         private void btBack_Click(object sender, EventArgs e)
         {
 
-            string UpdatePath = @"../../../AllLists\GetProductList.txt";
-            List<newProduct> UpdateProducts1 = new List<newProduct>();
-            string[] massiv = File.ReadAllLines(UpdatePath);
+            string GetUpdatePath = @"../../../AllLists\GetProductList.txt";
+            List<newProduct> GetUpdateProducts1 = new List<newProduct>();
+            string[] massiv = File.ReadAllLines(GetUpdatePath);
             foreach (string mass in massiv)
             {
                 string[] massivList = mass.Split(',');
                 if (massivList[1] == tbId.Text)
                     continue;
-                UpdateProducts1.Add(new newProduct() { User1 = massivList[0], productId = int.Parse(massivList[1]), productName = massivList[2], productPrice = int.Parse(massivList[3]), productSize = int.Parse(massivList[4]), DateTime = DateTime.Parse(massivList[5]) });
+                GetUpdateProducts1.Add(new newProduct() { User1 = massivList[0], productId = int.Parse(massivList[1]), productName = massivList[2], productPrice = int.Parse(massivList[3]), productSize = int.Parse(massivList[4]), DateTime = DateTime.Parse(massivList[5]) });
 
             }
 
-            string UpdatePat = @"../../../AllLists\ProductList.txt";
-            string[] line = File.ReadAllLines(UpdatePat);
-            List<newProduct> products = new List<newProduct>();
+            string UpdatePath = @"../../../AllLists\ProductList.txt";
+            string[] line = File.ReadAllLines(UpdatePath);
+            List<Product> products = new List<Product>();
             List<Product> list = new List<Product>();
             foreach (string item in line)
             {
@@ -351,32 +351,38 @@ namespace Dukon_Project
                 list.Add(new Product() { Id = int.Parse(line1[0]), ProductName = line1[1], ProductPrice = int.Parse(line1[2]), ProductSize = int.Parse(line1[3]), ProductDateTime = DateTime.Parse(line1[4]) });
             }
 
-            foreach (Product product in list)
+            if (!string.IsNullOrEmpty(GetUpdatePath))
             {
-
-                if (product.Id == gtId)
+                try
                 {
-                    product.ProductSize = product.ProductSize + mqdor;
+                    foreach (Product item in list)
+                    {
+
+                            if (gtId == item.Id)
+                            {
+                                item.ProductSize = item.ProductSize + mqdor;
+                            }
+                        
+                        products.Add(new Product() { Id = item.Id, ProductName = item.ProductName, ProductPrice = item.ProductPrice, ProductSize = item.ProductSize, ProductDateTime = item.ProductDateTime });
+                    }
+                    StreamWriter streamWriter = new StreamWriter(UpdatePath);
+                    foreach (Product item in products)
+                    {
+                        streamWriter.WriteLine(item.Id + "," + item.ProductName + "," + item.ProductPrice + "," + item.ProductSize + "," + item.ProductDateTime);
+                    }
+                    streamWriter.Close();
+                    StreamWriter streamWriter1 = File.CreateText(GetUpdatePath);
+                    streamWriter1.Write("");
+                    streamWriter1.Close();
+                    dataGridView2.DataSource = GetUpdateProducts1.Clear;
+                    dataGridViewProductTable.DataSource = products;
 
                 }
-
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xatolik bor");
+                }
             }
-            StreamWriter streamWriter2 = new StreamWriter(UpdatePath);
-            foreach (Product product in list)
-            {
-                streamWriter2.WriteLine(product.Id + "," + product.ProductName + "," + product.ProductPrice + "," + product.ProductSize + "," + product.ProductDateTime);
-            }
-            streamWriter2.Close();
-            StreamWriter streamWriter = File.CreateText(UpdatePath);
-            foreach (newProduct product in UpdateProducts1)
-            {
-                streamWriter.WriteLine(product.User1 + "," + product.productId + "," + product.productName + "," + product.productPrice + "," + product.productSize + "," + product.DateTime);
-            }
-            streamWriter.Close();
-            dataGridView2.DataSource = UpdateProducts1;
-            dataGridViewProductTable.DataSource = list;
-
 
         }
 
