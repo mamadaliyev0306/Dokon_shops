@@ -34,7 +34,6 @@
             tbMiqdor = new TextBox();
             tbId = new TextBox();
             tbGetProduct = new TextBox();
-            lbSearch = new Label();
             dataGridView2 = new DataGridView();
             btnSale = new Button();
             dataGridViewProductTable = new DataGridView();
@@ -52,6 +51,9 @@
             tbNewSearch = new TextBox();
             BtnSearchNew = new Button();
             linkLabel1 = new LinkLabel();
+            btnFilter = new Button();
+            cmbF = new ComboBox();
+            cmbFilter = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productBindingSource).BeginInit();
@@ -111,17 +113,6 @@
             tbGetProduct.TabIndex = 5;
             tbGetProduct.TextChanged += textBox3_TextChanged;
             // 
-            // lbSearch
-            // 
-            lbSearch.AutoSize = true;
-            lbSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbSearch.Location = new Point(42, 38);
-            lbSearch.Margin = new Padding(4, 0, 4, 0);
-            lbSearch.Name = "lbSearch";
-            lbSearch.Size = new Size(187, 32);
-            lbSearch.TabIndex = 8;
-            lbSearch.Text = "Serach Product";
-            // 
             // dataGridView2
             // 
             dataGridView2.BackgroundColor = SystemColors.ButtonFace;
@@ -153,11 +144,11 @@
             dataGridViewProductTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProductTable.Columns.AddRange(new DataGridViewColumn[] { ID, productNameDataGridViewTextBoxColumn, productPriceDataGridViewTextBoxColumn, productSizeDataGridViewTextBoxColumn, productDateTimeDataGridViewTextBoxColumn });
             dataGridViewProductTable.DataSource = productBindingSource;
-            dataGridViewProductTable.Location = new Point(42, 102);
+            dataGridViewProductTable.Location = new Point(13, 102);
             dataGridViewProductTable.Margin = new Padding(4);
             dataGridViewProductTable.Name = "dataGridViewProductTable";
             dataGridViewProductTable.RowHeadersWidth = 51;
-            dataGridViewProductTable.Size = new Size(844, 835);
+            dataGridViewProductTable.Size = new Size(873, 835);
             dataGridViewProductTable.TabIndex = 11;
             dataGridViewProductTable.CellContentClick += dataGridView1_CellContentClick_1;
             // 
@@ -264,16 +255,19 @@
             // 
             // tbNewSearch
             // 
-            tbNewSearch.Location = new Point(262, 42);
+            tbNewSearch.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbNewSearch.ForeColor = Color.Gray;
+            tbNewSearch.Location = new Point(467, 43);
             tbNewSearch.Margin = new Padding(4);
             tbNewSearch.Name = "tbNewSearch";
-            tbNewSearch.Size = new Size(438, 31);
+            tbNewSearch.Size = new Size(293, 34);
             tbNewSearch.TabIndex = 18;
+            tbNewSearch.Text = " Search";
             // 
             // BtnSearchNew
             // 
             BtnSearchNew.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnSearchNew.Location = new Point(769, 38);
+            BtnSearchNew.Location = new Point(768, 41);
             BtnSearchNew.Margin = new Padding(4);
             BtnSearchNew.Name = "BtnSearchNew";
             BtnSearchNew.Size = new Size(118, 36);
@@ -296,12 +290,51 @@
             linkLabel1.Text = "Dasturdan chiqish";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // btnFilter
+            // 
+            btnFilter.BackColor = Color.FromArgb(192, 255, 192);
+            btnFilter.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFilter.Location = new Point(256, 41);
+            btnFilter.Name = "btnFilter";
+            btnFilter.Size = new Size(75, 36);
+            btnFilter.TabIndex = 21;
+            btnFilter.Text = "Filter";
+            btnFilter.UseVisualStyleBackColor = false;
+            btnFilter.Click += btnFilter_Click;
+            // 
+            // cmbF
+            // 
+            cmbF.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbF.FormattingEnabled = true;
+            cmbF.Items.AddRange(new object[] { "O", "K" });
+            cmbF.Location = new Point(12, 38);
+            cmbF.Name = "cmbF";
+            cmbF.Size = new Size(50, 36);
+            cmbF.TabIndex = 22;
+            cmbF.Text = "O";
+            // 
+            // cmbFilter
+            // 
+            cmbFilter.BackColor = Color.White;
+            cmbFilter.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbFilter.ForeColor = SystemColors.AppWorkspace;
+            cmbFilter.FormattingEnabled = true;
+            cmbFilter.Items.AddRange(new object[] { "Id", "ProductName", "ProductPrice", "ProductSize", "ProductDateTime" });
+            cmbFilter.Location = new Point(68, 38);
+            cmbFilter.Name = "cmbFilter";
+            cmbFilter.Size = new Size(182, 36);
+            cmbFilter.TabIndex = 23;
+            cmbFilter.Text = " Sort";
+            // 
             // FormSealer
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1924, 1050);
+            Controls.Add(cmbFilter);
+            Controls.Add(cmbF);
+            Controls.Add(btnFilter);
             Controls.Add(linkLabel1);
             Controls.Add(BtnSearchNew);
             Controls.Add(tbNewSearch);
@@ -313,7 +346,6 @@
             Controls.Add(dataGridViewProductTable);
             Controls.Add(btnSale);
             Controls.Add(dataGridView2);
-            Controls.Add(lbSearch);
             Controls.Add(tbGetProduct);
             Controls.Add(tbId);
             Controls.Add(tbMiqdor);
@@ -335,7 +367,6 @@
         private TextBox tbMiqdor;
         private TextBox tbId;
         private TextBox tbGetProduct;
-        private Label lbSearch;
         private DataGridView dataGridView2;
         private Button btnSale;
         private DataGridView dataGridViewProductTable;
@@ -353,5 +384,8 @@
         private TextBox tbNewSearch;
         private Button BtnSearchNew;
         private LinkLabel linkLabel1;
+        private Button btnFilter;
+        private ComboBox cmbF;
+        private ComboBox cmbFilter;
     }
 }

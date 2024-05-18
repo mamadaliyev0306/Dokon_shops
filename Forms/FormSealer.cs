@@ -26,11 +26,17 @@ namespace Dukon_Project
         public FormSealer()
         {
             InitializeComponent();
+            cmbFilter.Items.Add("Id");
+            cmbFilter.Items.Add("ProductName");
+            cmbFilter.Items.Add("ProductPrice");
+            cmbFilter.Items.Add("ProductSize");
+            cmbFilter.Items.Add("ProductDateTime");
+            cmbF.Items.Add("K");
+            cmbF.Items.Add("O");
+
             productsList = GetProducts();
-
-
-
             dataGridViewProductTable.DataSource = productsList;
+
 
         }
         public string name { get; set; }
@@ -358,11 +364,11 @@ namespace Dukon_Project
                     foreach (Product item in list)
                     {
 
-                            if (gtId == item.Id)
-                            {
-                                item.ProductSize = item.ProductSize + mqdor;
-                            }
-                        
+                        if (gtId == item.Id)
+                        {
+                            item.ProductSize = item.ProductSize + mqdor;
+                        }
+
                         products.Add(new Product() { Id = item.Id, ProductName = item.ProductName, ProductPrice = item.ProductPrice, ProductSize = item.ProductSize, ProductDateTime = item.ProductDateTime });
                     }
                     StreamWriter streamWriter = new StreamWriter(UpdatePath);
@@ -408,5 +414,100 @@ namespace Dukon_Project
         {
             Application.Exit();
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            string filterText = cmbFilter.Text.ToLower();
+            string pathAdd = @"../../../AllLists\ProductList.txt";
+            List<Product> products = new List<Product>();
+            string[] ProductListMassiv = File.ReadAllLines(pathAdd);
+            try
+            {
+                for (int i = 0; i < ProductListMassiv.Length; i++)
+                {
+                    string[] userListLine = ProductListMassiv[i].Split(",");
+                    if (userListLine[0] != "")
+                        products.Add(new Product() { Id = int.Parse(userListLine[0]), ProductName = userListLine[1], ProductPrice = int.Parse(userListLine[2]), ProductSize = int.Parse(userListLine[3]), ProductDateTime = DateTime.Parse(userListLine[4]) });
+                }
+                StreamWriter streamWriter = File.CreateText(pathAdd);
+                foreach (Product product in products)
+                {
+                    streamWriter.WriteLine(product.Id + "," + product.ProductName + "," + product.ProductPrice + "," + product.ProductSize + "," + product.ProductDateTime);
+                }
+                streamWriter.Close();
+                //Kamayish tartibda Filter qiladi
+                if (cmbF.Text == "K")
+                {
+                    if (cmbFilter.Text == "Id")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderByDescending(p => p.Id).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductName")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderByDescending(p => p.ProductName).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductSize")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderByDescending(p => p.ProductSize).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductPrice")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderByDescending(p => p.ProductPrice).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductDateTime")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderByDescending(p => p.ProductDateTime).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else
+                    {
+                        dataGridViewProductTable.DataSource = products;
+                    }
+                }
+                //O'sish tartibda Filter qiladi
+                else
+                {
+                    if (cmbFilter.Text == "Id")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderBy(p => p.Id).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductName")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderBy(p => p.ProductName).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductSize")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderBy(p => p.ProductSize).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductPrice")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderBy(p => p.ProductPrice).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else if (cmbFilter.Text == "ProductDateTime")
+                    {
+                        var sortedData = new BindingList<Product>(products.OrderBy(p => p.ProductDateTime).ToList());
+                        dataGridViewProductTable.DataSource = sortedData;
+                    }
+                    else
+                    {
+                        dataGridViewProductTable.DataSource = products;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xatolik bor Filter qismida ?" + ex.Message);
+            }
+        }
+
+
     }
 }
