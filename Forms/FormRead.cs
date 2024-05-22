@@ -50,9 +50,50 @@ namespace Dukon_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormMeneger formMeneger = new FormMeneger();
-            formMeneger.Show();
+
+            if (dataGridViewRead.CanSelect)
+            {
+                try
+                {
+                    int productId = Convert.ToInt32(dataGridViewRead.SelectedRows[0].Cells[0].Value.ToString());
+
+                    DialogResult result = MessageBox.Show($"Do you want to delete the product with ID {productId}?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+
+                        string[] lines = File.ReadAllLines(@"../../../AllLists\ProductList.txt");
+
+                        var updatedLines = new List<string>();
+                        foreach (string line in lines)
+                        {
+                            string[] parts = line.Split(',');
+                            if (parts.Length >= 5 && parts[0] == productId.ToString())
+                            {
+
+                                continue;
+                            }
+                            updatedLines.Add(line);
+                        }
+
+
+                        File.WriteAllLines(@"../../../AllLists\ProductList.txt", updatedLines);
+
+
+                        GetRead();
+
+                        MessageBox.Show("Product deleted successfully!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select the product to be deleted!");
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -71,7 +112,7 @@ namespace Dukon_Project
             List<Product> products = new List<Product>();
             foreach (Product item in users)
             {
-                if (item.ProductName.Contains(tbSearch.Text))
+                if (item.ProductName.Contains(tbSearch.Text) || item.Id.ToString().Contains(tbSearch.Text) || item.ProductSize.ToString().Contains(tbSearch.Text) || item.ProductPrice.ToString().Contains(tbSearch.Text) || item.ProductDateTime.ToString().Contains(tbSearch.Text))
                 {
                     products.Add(new Product() { Id = item.Id, ProductName = item.ProductName, ProductPrice = item.ProductPrice, ProductSize = item.ProductSize, ProductDateTime = item.ProductDateTime });
                 }

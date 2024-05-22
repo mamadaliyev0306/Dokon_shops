@@ -122,12 +122,6 @@ namespace Dukon_Project
 
         }
 
-        private void BtnNazat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormReport formReport = new FormReport();
-            formReport.Show();
-        }
 
         private void tbSana_TextChanged(object sender, EventArgs e)
         {

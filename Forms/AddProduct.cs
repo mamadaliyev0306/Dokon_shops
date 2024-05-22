@@ -29,13 +29,7 @@ namespace Dukon_Project
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CreateForm cr = new CreateForm();
-            cr.Show();
-        }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             string pathAdd = @"../../../AllLists\ProductList.txt";
@@ -44,23 +38,23 @@ namespace Dukon_Project
             if (txtProductName.Text != "" && txtProductPrice.Text != "" && txtProductSize.Text != "" && txtProductDateTime.Text != "")
             {
                 List<Product> products = new List<Product>();
-                string[] massiv=File.ReadAllLines(pathAdd);
-                
-               // int son = rastgele.Next(1000, 9999);
+                string[] massiv = File.ReadAllLines(pathAdd);
+
+                // int son = rastgele.Next(1000, 9999);
                 foreach (var item in massiv)
                 {
                     Random rastgele1 = new Random();
                     string[] massiv1 = item.Split(',');
-                   
-                    products.Add(new Product() {Id = rastgele1.Next(1000, 9999), ProductName= massiv1[1], ProductPrice =int.Parse( massiv1[2]), ProductSize = int.Parse(massiv1[3]), ProductDateTime = DateTime.Parse(massiv1[4]) });
+
+                    products.Add(new Product() { Id = rastgele1.Next(1000, 9999), ProductName = massiv1[1], ProductPrice = int.Parse(massiv1[2]), ProductSize = int.Parse(massiv1[3]), ProductDateTime = DateTime.Parse(massiv1[4]) });
                 }
                 Random rastgele = new Random();
-                products.Add(new Product() {Id = rastgele.Next(1000, 9999), ProductName=txtProductName.Text,ProductPrice=int.Parse(txtProductPrice.Text),ProductSize=int.Parse(txtProductSize.Text),ProductDateTime=DateTime.Parse(txtProductDateTime.Text) });
+                products.Add(new Product() { Id = rastgele.Next(1000, 9999), ProductName = txtProductName.Text, ProductPrice = int.Parse(txtProductPrice.Text), ProductSize = int.Parse(txtProductSize.Text), ProductDateTime = DateTime.Parse(txtProductDateTime.Text) });
                 StreamWriter streamWriter1 = new StreamWriter(pathAdd);
-                foreach(Product list in products)
+                foreach (Product list in products)
                 {
-                   
-                    streamWriter1.WriteLine(list.Id+","+list.ProductName+","+list.ProductPrice+","+list.ProductSize+","+list.ProductDateTime);
+
+                    streamWriter1.WriteLine(list.Id + "," + list.ProductName + "," + list.ProductPrice + "," + list.ProductSize + "," + list.ProductDateTime);
                 }
                 streamWriter1.Close();
 
@@ -80,16 +74,16 @@ namespace Dukon_Project
             List<Product> users = new List<Product>();
             string[] ProductListMassiv = File.ReadAllLines(pathAdd);
 
-          foreach(var item in ProductListMassiv) 
-            { 
+            foreach (var item in ProductListMassiv)
+            {
                 string[] userListLine = item.Split(",");
                 if (userListLine[0] != "")
-                    users.Add(new Product() { Id=int.Parse(userListLine[0]), ProductName = userListLine[1], ProductPrice = int.Parse(userListLine[2]), ProductSize = int.Parse(userListLine[3]), ProductDateTime = DateTime.Parse(userListLine[4]) });
+                    users.Add(new Product() { Id = int.Parse(userListLine[0]), ProductName = userListLine[1], ProductPrice = int.Parse(userListLine[2]), ProductSize = int.Parse(userListLine[3]), ProductDateTime = DateTime.Parse(userListLine[4]) });
             }
             StreamWriter streamWriter = File.CreateText(pathAdd);
             foreach (Product users1 in users)
             {
-                streamWriter.WriteLine(users1.Id+","+users1.ProductName + "," + users1.ProductPrice + "," + users1.ProductSize + "," + users1.ProductDateTime.ToString("yyyy/MM/dd"));
+                streamWriter.WriteLine(users1.Id + "," + users1.ProductName + "," + users1.ProductPrice + "," + users1.ProductSize + "," + users1.ProductDateTime.ToString("yyyy/MM/dd"));
             }
             streamWriter.Close();
 
@@ -109,6 +103,13 @@ namespace Dukon_Project
         private void txtProductDateTime_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMeneger formMeneger = new FormMeneger();
+            formMeneger.Show();
         }
     }
 }

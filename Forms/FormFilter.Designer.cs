@@ -111,7 +111,7 @@
             BtnBackReport.TabIndex = 6;
             BtnBackReport.Text = "Back";
             BtnBackReport.UseVisualStyleBackColor = true;
-            BtnBackReport.Click += BtnBackReport_Click;
+        
             // 
             // FormFilter
             // 

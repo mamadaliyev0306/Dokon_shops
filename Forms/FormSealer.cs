@@ -412,7 +412,9 @@ namespace Dukon_Project
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
         }
 
         private void btnFilter_Click(object sender, EventArgs e)

@@ -11,9 +11,6 @@
     <Compile Update="Forms\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\CreateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\FormDelete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -27,9 +24,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormRead.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\FormReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\FormSealer.cs">

@@ -10,8 +10,8 @@ namespace Dukon_Project
             InitializeComponent();
         }
 
-       
-       
+
+
         private void btnTasdiqlash_Click(object sender, EventArgs e)
         {
 
@@ -33,7 +33,7 @@ namespace Dukon_Project
                         if (user.Role == Role.Sealer.ToString())
                         {
                             sanoq++;
-                            
+
                             FormSealer formSealer = new FormSealer(tbUserName.Text);
                             formSealer.Show(); this.Hide();
                         }
@@ -86,6 +86,11 @@ namespace Dukon_Project
         private void tbPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

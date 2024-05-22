@@ -64,11 +64,5 @@ namespace Dukon_Project
 
         }
 
-        private void BtnBackReport_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormReport formReport = new FormReport();
-            formReport.Show();
-        }
     }
 }

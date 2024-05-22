@@ -20,8 +20,6 @@ C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormMeneg
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormLastPassword.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormUpdateParol.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.AddProduct.resources
-C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.CreateForm.resources
-C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormReport.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormFilter.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormTushum.resources
 C:\New Folder\Dukon_Project_new\obj\Debug\net8.0-windows\Dukon_Project.FormRead.resources

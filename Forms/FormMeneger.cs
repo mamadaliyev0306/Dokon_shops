@@ -17,46 +17,63 @@ namespace Dukon_Project
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CreateForm createForm = new CreateForm();
-            createForm.Show();
-        }
-
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormReport createForm = new FormReport();
-            createForm.Show();
-        }
-
-
-        private void btnRead_Click(object sender, EventArgs e)
+        private void mahsulotlarRoyhatiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormRead formRead = new FormRead();
             formRead.Show();
         }
 
-
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void sotuvchiQoshishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormDelete formDelete = new FormDelete();
-            formDelete.Show();
+            AddPerson addPerson = new AddPerson();
+            addPerson.Show();
         }
 
-        private void btnUpdate_Click_1(object sender, EventArgs e)
+        private void mahsulotQoshishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
+        }
+
+        private void mahsulotTaxrilashToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             UpdateProduct updateProduct = new UpdateProduct();
             updateProduct.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void mahsulotlarJadvaliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            FormRead formRead1 = new FormRead();
+            formRead1.Show();
+        }
+
+        private void logingaQaytishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+        }
+
+        private void dasturniYopishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mahsulotOchirishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormDelete formDelete = new FormDelete();
+            formDelete.Show();
+        }
+
+        private void FormMeneger_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

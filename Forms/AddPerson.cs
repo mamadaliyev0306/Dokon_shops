@@ -27,8 +27,8 @@ namespace Dukon_Project
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CreateForm createForm = new CreateForm();
-            createForm.Show();
+          FormMeneger formMeneger = new FormMeneger();
+            formMeneger.Show();
         }
 
         private void cmbRole_SelectedIndexChanged(object sender, EventArgs e)

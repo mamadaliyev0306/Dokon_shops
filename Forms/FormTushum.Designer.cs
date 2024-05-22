@@ -116,7 +116,7 @@
             BtnNazat.TabIndex = 7;
             BtnNazat.Text = "Back";
             BtnNazat.UseVisualStyleBackColor = true;
-            BtnNazat.Click += BtnNazat_Click;
+           
             // 
             // FormTushum
             // 

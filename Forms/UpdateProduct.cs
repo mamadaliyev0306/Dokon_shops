@@ -90,7 +90,7 @@ namespace Dukon_Project
         {
             string path = @"../../../AllLists\ProductList.txt";
             List<Product> products = new List<Product>();
-            if (tbProductID.Text!="" && tbProductID.Text.Length > 3 && tbProductID.Text.Length < 5 && textBoxNewName.Text != "" && textBoxNewPrice.Text != "" && textBoxNewDateTime.Text != "")
+            if (tbProductID.Text != "" && tbProductID.Text.Length > 3 && tbProductID.Text.Length < 5 && textBoxNewName.Text != "" && textBoxNewPrice.Text != "" && textBoxNewDateTime.Text != "")
             {
 
 
@@ -144,27 +144,27 @@ namespace Dukon_Project
                 if (userListLine[0] != "")
                     users.Add(new Product() { Id = int.Parse(userListLine[0]), ProductName = userListLine[1], ProductPrice = int.Parse(userListLine[2]), ProductSize = int.Parse(userListLine[3]), ProductDateTime = DateTime.Parse(userListLine[4]) });
             }
-            if(tbProductID.Text!="" && tbProductID.Text.Length>3 && tbProductID.Text.Length < 5)
+            if (tbProductID.Text != "" && tbProductID.Text.Length > 3 && tbProductID.Text.Length < 5)
             {
-             try
-             {
-                foreach (Product item in users)
+                try
                 {
-                    if (item.Id.ToString().Contains(tbProductID.Text))
+                    foreach (Product item in users)
                     {
-                        textBoxNewName.Text = item.ProductName;
-                        textBoxNewPrice.Text = item.ProductPrice.ToString();
-                        textBoxNewMiqdor.Text = item.ProductSize.ToString();
-                        textBoxNewDateTime.Text = item.ProductDateTime.ToString();
+                        if (item.Id.ToString().Contains(tbProductID.Text))
+                        {
+                            textBoxNewName.Text = item.ProductName;
+                            textBoxNewPrice.Text = item.ProductPrice.ToString();
+                            textBoxNewMiqdor.Text = item.ProductSize.ToString();
+                            textBoxNewDateTime.Text = item.ProductDateTime.ToString();
+                        }
+
                     }
 
                 }
-
-             }
-              catch(Exception ex)
-              {
-                MessageBox.Show("Id xato ?");
-              }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Id xato ?");
+                }
 
             }
             else if (tbProductID.Text == "")
@@ -173,10 +173,12 @@ namespace Dukon_Project
                 textBoxNewPrice.Text = "";
                 textBoxNewMiqdor.Text = "";
                 textBoxNewDateTime.Text = "";
-            }else
+            }
+            else
             {
                 MessageBox.Show("Id xatolik bor?");
             }
         }
+
     }
 }

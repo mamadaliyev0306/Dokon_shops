@@ -15,118 +15,145 @@
             }
             base.Dispose(disposing);
         }
-
-        private Button btnCreate;
         private void InitializeComponent()
         {
-            btnCreate = new Button();
-            btnDelete = new Button();
-            btnRead = new Button();
-            btnReport = new Button();
-            btnUpdate = new Button();
-            button1 = new Button();
+            menuStrip1 = new MenuStrip();
+            menyuToolStripMenuItem = new ToolStripMenuItem();
+            xisobotlarToolStripMenuItem = new ToolStripMenuItem();
+            mahsulotlarRoyhatiToolStripMenuItem = new ToolStripMenuItem();
+            mahsulotQoshishToolStripMenuItem = new ToolStripMenuItem();
+            mahsulotTaxrilashToolStripMenuItem = new ToolStripMenuItem();
+            mahsulotlarJadvaliToolStripMenuItem = new ToolStripMenuItem();
+            mahsulotOchirishToolStripMenuItem = new ToolStripMenuItem();
+            sotuvchiQoshishToolStripMenuItem = new ToolStripMenuItem();
+            chiqishToolStripMenuItem = new ToolStripMenuItem();
+            logingaQaytishToolStripMenuItem = new ToolStripMenuItem();
+            dasturniYopishToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnCreate
+            // menuStrip1
             // 
-            btnCreate.BackColor = Color.FromArgb(224, 224, 224);
-            btnCreate.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCreate.Location = new Point(42, 37);
-            btnCreate.Margin = new Padding(2);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(198, 92);
-            btnCreate.TabIndex = 0;
-            btnCreate.Text = "Create";
-            btnCreate.UseVisualStyleBackColor = false;
-            btnCreate.Click += button1_Click;
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menyuToolStripMenuItem, chiqishToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(993, 40);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // btnDelete
+            // menyuToolStripMenuItem
             // 
-            btnDelete.BackColor = Color.LightGray;
-            btnDelete.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(302, 148);
-            btnDelete.Margin = new Padding(2);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(174, 97);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click_1;
+            menyuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { xisobotlarToolStripMenuItem, mahsulotlarRoyhatiToolStripMenuItem, sotuvchiQoshishToolStripMenuItem });
+            menyuToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            menyuToolStripMenuItem.Name = "menyuToolStripMenuItem";
+            menyuToolStripMenuItem.Size = new Size(109, 36);
+            menyuToolStripMenuItem.Text = "Menyu";
             // 
-            // btnRead
+            // xisobotlarToolStripMenuItem
             // 
-            btnRead.BackColor = Color.LightGray;
-            btnRead.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRead.Location = new Point(302, 37);
-            btnRead.Margin = new Padding(2);
-            btnRead.Name = "btnRead";
-            btnRead.Size = new Size(174, 92);
-            btnRead.TabIndex = 3;
-            btnRead.Text = "Products";
-            btnRead.UseVisualStyleBackColor = false;
-            btnRead.Click += btnRead_Click;
+            xisobotlarToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            xisobotlarToolStripMenuItem.Name = "xisobotlarToolStripMenuItem";
+            xisobotlarToolStripMenuItem.Size = new Size(364, 34);
+            xisobotlarToolStripMenuItem.Text = "Xisobotlar";
             // 
-            // btnReport
+            // mahsulotlarRoyhatiToolStripMenuItem
             // 
-            btnReport.BackColor = Color.LightGray;
-            btnReport.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReport.Location = new Point(169, 274);
-            btnReport.Margin = new Padding(2);
-            btnReport.Name = "btnReport";
-            btnReport.Size = new Size(202, 100);
-            btnReport.TabIndex = 4;
-            btnReport.Text = "Report";
-            btnReport.UseVisualStyleBackColor = false;
-            btnReport.Click += btnReport_Click;
+            mahsulotlarRoyhatiToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mahsulotQoshishToolStripMenuItem, mahsulotTaxrilashToolStripMenuItem, mahsulotlarJadvaliToolStripMenuItem, mahsulotOchirishToolStripMenuItem });
+            mahsulotlarRoyhatiToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            mahsulotlarRoyhatiToolStripMenuItem.Name = "mahsulotlarRoyhatiToolStripMenuItem";
+            mahsulotlarRoyhatiToolStripMenuItem.Size = new Size(364, 34);
+            mahsulotlarRoyhatiToolStripMenuItem.Text = "Mahsulotlar bo'limi";
+            mahsulotlarRoyhatiToolStripMenuItem.Click += mahsulotlarRoyhatiToolStripMenuItem_Click;
             // 
-            // btnUpdate
+            // mahsulotQoshishToolStripMenuItem
             // 
-            btnUpdate.BackColor = Color.FromArgb(224, 224, 224);
-            btnUpdate.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(42, 150);
-            btnUpdate.Margin = new Padding(2);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(198, 92);
-            btnUpdate.TabIndex = 6;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click_1;
+            mahsulotQoshishToolStripMenuItem.Name = "mahsulotQoshishToolStripMenuItem";
+            mahsulotQoshishToolStripMenuItem.Size = new Size(277, 34);
+            mahsulotQoshishToolStripMenuItem.Text = "Mahsulot qo'shish";
+            mahsulotQoshishToolStripMenuItem.Click += mahsulotQoshishToolStripMenuItem_Click;
             // 
-            // button1
+            // mahsulotTaxrilashToolStripMenuItem
             // 
-            button1.BackColor = Color.FromArgb(255, 128, 128);
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1029, 28);
-            button1.Name = "button1";
-            button1.Size = new Size(229, 45);
-            button1.TabIndex = 7;
-            button1.Text = "Dasturdan chiqish";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            mahsulotTaxrilashToolStripMenuItem.Name = "mahsulotTaxrilashToolStripMenuItem";
+            mahsulotTaxrilashToolStripMenuItem.Size = new Size(277, 34);
+            mahsulotTaxrilashToolStripMenuItem.Text = "Mahsulot taxrilash";
+            mahsulotTaxrilashToolStripMenuItem.Click += mahsulotTaxrilashToolStripMenuItem_Click;
+            // 
+            // mahsulotlarJadvaliToolStripMenuItem
+            // 
+            mahsulotlarJadvaliToolStripMenuItem.Name = "mahsulotlarJadvaliToolStripMenuItem";
+            mahsulotlarJadvaliToolStripMenuItem.Size = new Size(277, 34);
+            mahsulotlarJadvaliToolStripMenuItem.Text = "Mahsulotlar jadvali";
+            mahsulotlarJadvaliToolStripMenuItem.Click += mahsulotlarJadvaliToolStripMenuItem_Click;
+            // 
+            // mahsulotOchirishToolStripMenuItem
+            // 
+            mahsulotOchirishToolStripMenuItem.Name = "mahsulotOchirishToolStripMenuItem";
+            mahsulotOchirishToolStripMenuItem.Size = new Size(277, 34);
+            mahsulotOchirishToolStripMenuItem.Text = "Mahsulot ochirish";
+            mahsulotOchirishToolStripMenuItem.Click += mahsulotOchirishToolStripMenuItem_Click;
+            // 
+            // sotuvchiQoshishToolStripMenuItem
+            // 
+            sotuvchiQoshishToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            sotuvchiQoshishToolStripMenuItem.Name = "sotuvchiQoshishToolStripMenuItem";
+            sotuvchiQoshishToolStripMenuItem.Size = new Size(364, 34);
+            sotuvchiQoshishToolStripMenuItem.Text = "Sotuvchi qo'shish va o'chirish";
+            sotuvchiQoshishToolStripMenuItem.Click += sotuvchiQoshishToolStripMenuItem_Click;
+            // 
+            // chiqishToolStripMenuItem
+            // 
+            chiqishToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { logingaQaytishToolStripMenuItem, dasturniYopishToolStripMenuItem });
+            chiqishToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            chiqishToolStripMenuItem.Name = "chiqishToolStripMenuItem";
+            chiqishToolStripMenuItem.Size = new Size(113, 36);
+            chiqishToolStripMenuItem.Text = "Chiqish";
+            // 
+            // logingaQaytishToolStripMenuItem
+            // 
+            logingaQaytishToolStripMenuItem.Name = "logingaQaytishToolStripMenuItem";
+            logingaQaytishToolStripMenuItem.Size = new Size(299, 40);
+            logingaQaytishToolStripMenuItem.Text = "Loginga qaytish";
+            logingaQaytishToolStripMenuItem.Click += logingaQaytishToolStripMenuItem_Click;
+            // 
+            // dasturniYopishToolStripMenuItem
+            // 
+            dasturniYopishToolStripMenuItem.Name = "dasturniYopishToolStripMenuItem";
+            dasturniYopishToolStripMenuItem.Size = new Size(299, 40);
+            dasturniYopishToolStripMenuItem.Text = "Dasturni yopish";
+            dasturniYopishToolStripMenuItem.Click += dasturniYopishToolStripMenuItem_Click;
             // 
             // FormMeneger
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(1318, 632);
-            Controls.Add(button1);
-            Controls.Add(btnUpdate);
-            Controls.Add(btnReport);
-            Controls.Add(btnRead);
-            Controls.Add(btnDelete);
-            Controls.Add(btnCreate);
+            ClientSize = new Size(993, 632);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(2);
             Name = "FormMeneger";
             Text = "FormMeneger";
+            Load += FormMeneger_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
-        private Button btnDelete;
-        private Button btnRead;
-        private Button btnReport;
         private DataGridView GetProduct;
-        private Button btnUpdate;
-        private Button button1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menyuToolStripMenuItem;
+        private ToolStripMenuItem mahsulotlarRoyhatiToolStripMenuItem;
+        private ToolStripMenuItem xisobotlarToolStripMenuItem;
+        private ToolStripMenuItem sotuvchiQoshishToolStripMenuItem;
+        private ToolStripMenuItem chiqishToolStripMenuItem;
+        private ToolStripMenuItem logingaQaytishToolStripMenuItem;
+        private ToolStripMenuItem dasturniYopishToolStripMenuItem;
+        private ToolStripMenuItem mahsulotQoshishToolStripMenuItem;
+        private ToolStripMenuItem mahsulotTaxrilashToolStripMenuItem;
+        private ToolStripMenuItem mahsulotlarJadvaliToolStripMenuItem;
+        private ToolStripMenuItem mahsulotOchirishToolStripMenuItem;
     }
 }

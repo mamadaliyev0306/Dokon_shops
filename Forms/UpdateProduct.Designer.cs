@@ -135,7 +135,7 @@
             btnUpdate.Font = new Font("Microsoft Sans Serif", 9F);
             btnUpdate.ForeColor = Color.Black;
             btnUpdate.ImageAlign = ContentAlignment.BottomLeft;
-            btnUpdate.Location = new Point(1542, 636);
+            btnUpdate.Location = new Point(1622, 636);
             btnUpdate.Margin = new Padding(5, 4, 5, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(265, 68);
